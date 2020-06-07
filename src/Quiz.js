@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import QuizEnd from './QuizEnd';
 import QuizQuestion from './QuizQuestion';
+import QuizEnd from './QuizEnd';
 
 let quizData = require('./quiz_data.json');
 
@@ -12,7 +12,7 @@ class Quiz extends Component {
 
   render() {
     const isQuizEnd =
-      quizData.quiz_questions.length === this.state.props.quiz_position - 1;
+      ((this.state.props.quiz_position - 1) === quizData.quiz_questions.length);
     return (
       <div>
         {isQuizEnd ? <QuizEnd/> :
